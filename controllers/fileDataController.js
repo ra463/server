@@ -33,7 +33,7 @@ exports.processCSVFile = catchAsyncError(async (req, res, next) => {
       inputImageUrls.forEach((url) => {
         url.trim();
       });
-      
+
       const key = Object.keys(row).find(
         (k) => k.trim().toLowerCase() === "s. no."
       );
@@ -142,15 +142,15 @@ exports.customWebhook = catchAsyncError(async (req, res, next) => {
 });
 
 exports.processRequestID = catchAsyncError(async (req, res, next) => {
-  const { requestID } = req.body;
+  const { requestId } = req.body;
 
-  const fileData = await FileData.findOne({ requestID });
+  const fileData = await FileData.findOne({ requestID: requestId });
   if (!fileData) return next(new ErrorHandler("Invalid Request ID", 404));
 
   if (fileData.status === "In-progress") {
     res.status(200).json({
       success: true,
-      requestID,
+      requestId,
       products: fileData.status,
     });
   } else {
