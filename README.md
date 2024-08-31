@@ -12,6 +12,9 @@
    - `PORT`
    - `BACKEND_URL` (The url of local/deployed server)
 5. Start the server using `npm start`.
+6. **The Input `CSV File` should have the same structure which was mentioned in the pdf**
+
+## PostMan Collection Link [https://documenter.getpostman.com/view/16780774/2sAXjM2rCm]
 
 ## Components
 
