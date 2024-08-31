@@ -15,7 +15,8 @@ The system processes CSV files to extract image URLs, processes the images, and 
 ## 3. Visual diagram of the system
 
 - Upload & Webhook API Workflow ![Workflow Diagram](./docs/upload.png)
-- Query Processing API Workflow ![Workflow Diagram](./docs/query.png)
+- Query Processing API Workflow 
+![Workflow Diagram](./docs/query.png)
 
 ## 4. Components
 
