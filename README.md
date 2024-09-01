@@ -10,11 +10,13 @@
    - `CLOUDINARY_API_SECRET`
    - `MONGO_URI`
    - `PORT`
-   - `BACKEND_URL` (The url of local/deployed server)
+   - `BACKEND_URL` (The url of local/deployed server) 
 5. Start the server using `npm start`.
 6. **The Input `CSV File` should have the same structure which was mentioned in the pdf**
 
-## PostMan Collection Link [https://documenter.getpostman.com/view/16780774/2sAXjM2rCm]
+### PostMan Collection Link - [https://documenter.getpostman.com/view/16780774/2sAXjM2rCm]
+
+### Server Deployed Link - [https://my-server-1.adaptable.app]
 
 ## Components
 
@@ -37,7 +39,7 @@
   - **Body**: The request body should include a file field for the CSV.
 
     ```bash
-    curl -X POST http://localhost:4000/api/v1/upload \
+    curl -X POST https://my-server-1.adaptable.app/api/v1/upload \
     -H "Content-Type: multipart/form-data" \
     -F "file=@csvfile.csv"
     ```
@@ -93,9 +95,9 @@
 
 ### **3. Check Request Status**
 
-**Endpoint**: `POST /api/v1/processRequestID`
+**Endpoint**: `POST /api/v1/processRequestID/:requestId`
 
-**Description**: Allows users to check the status of a file processing request using the `requestID`.
+**Description**: Allows users to check the status of a file processing request using the `requestId`.
 
 - **Request**:
 
