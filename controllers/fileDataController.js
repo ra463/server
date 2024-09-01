@@ -154,11 +154,9 @@ exports.processRequestID = catchAsyncError(async (req, res, next) => {
       products: fileData.status,
     });
   } else {
-    if (fileData.status === "completed") {
-      res.status(200).json({
-        success: true,
-        fileData,
-      });
-    }
+    res.status(200).json({
+      success: true,
+      fileData,
+    });
   }
 });
