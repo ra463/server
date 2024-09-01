@@ -148,15 +148,14 @@ exports.processRequestID = catchAsyncError(async (req, res, next) => {
   if (!fileData) return next(new ErrorHandler("Invalid Request ID", 404));
 
   if (fileData.status === "In-progress") {
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
-      requestId,
-      products: fileData.status,
-    });
-  } else {
-    res.status(200).json({
-      success: true,
-      fileData,
+      status: fileData.status,
     });
   }
+
+  res.status(200).json({
+    success: true,
+    fileData,
+  });
 });
