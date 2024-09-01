@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.post("/upload", upload, processCSVFile);
 router.post("/webhook", customWebhook);
-router.get("/request", processRequestID);
+router.get("/request/:requestId", processRequestID);
 
 module.exports = router;

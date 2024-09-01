@@ -15,8 +15,7 @@ The system processes CSV files to extract image URLs, processes the images, and 
 ## 3. Visual diagram of the system
 
 - Upload & Webhook API Workflow ![Workflow Diagram](./docs/upload.png)
-- Query Processing API Workflow 
-![Workflow Diagram](./docs/query.png)
+- Query Processing API Workflow ![Workflow Diagram](./docs/query.png)
 
 ## 4. Components
 
@@ -68,7 +67,7 @@ The system processes CSV files to extract image URLs, processes the images, and 
     - Return a unique ID for tracking the process.
 - **Status API**:
   - **Function**: Check the processing status using the request ID.
-  - **Inputs**: Request ID provided by the user.
+  - **Inputs**: Request ID provided by the user in `params`.
   - **Outputs**: Processing status and details of the processed images.
   - **Responsibilities**:
     - Retrieve the status of the request.

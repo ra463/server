@@ -99,13 +99,15 @@
 
 - **Request**:
 
+  - **Method**: GET
+  - **URL**: `/api/v1/request/:requestId`
   - **Headers**: `Content-Type: application/json`
-  - **Body**:
-    ```json
-    {
-      "requestID": "uuid-generated-request-id"
-    }
-    ```
+
+- **Example Request**:
+
+  ```bash
+  GET /api/v1/request/uuid-generated-request-id
+  ```
 
 - **Response**:
   - **200 OK** (In-progress)
@@ -113,7 +115,7 @@
     {
       "success": true,
       "requestID": "uuid-generated-request-id",
-      "products": "In-progress"
+      "status": "In-progress"
     }
     ```
   - **200 OK** (Completed)

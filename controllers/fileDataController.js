@@ -142,11 +142,9 @@ exports.customWebhook = catchAsyncError(async (req, res, next) => {
 });
 
 exports.processRequestID = catchAsyncError(async (req, res, next) => {
-  const { requestId } = req.body;
+  const { requestId } = req.params;
 
-  const fileData = await FileData.findOne({
-    requestID: requestId,
-  }).lean();
+  const fileData = await FileData.findOne({ requestID: requestId }).lean();
   if (!fileData) return next(new ErrorHandler("Invalid Request ID", 404));
 
   if (fileData.status === "In-progress") {
